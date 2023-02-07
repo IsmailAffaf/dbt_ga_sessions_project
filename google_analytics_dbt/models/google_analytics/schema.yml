@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: distinct_country_count
+    description: "Specific countries informations"
+    columns:
+      - name: reportDate
+        description: "Generation day of statistics"
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+                  column_type: date
+      - name: operationSystem
+        description: "the user OS"
+      - name: distincCountCountry
+        description: "sum of unique countries of our users on a specific day from a particular operating system"
+
+
+  - name: total_page_views
+    description: "Contains information about total views"
+    columns:
+      - name: reportDate
+        description: "Generation day of statistics"
+      - name: operationSystem
+        description: "the user OS"
+      - name: totalPageViews
+        description: "The sum of website views by a specific operating system in a particular day"
+
+  - name: users_report
+    description: "Final report"
+    columns:
+      - name: reportDate
+        description: "Generation day of statistics"
+      - name: operationSystem
+        description: "the user OS"
+      - name: distincCountCountry
+        description: "country count per OS and report day"
+      - name: totalPageViews
+        description: "website views count per OS and report day"
