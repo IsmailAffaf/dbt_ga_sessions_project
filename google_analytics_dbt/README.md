@@ -81,7 +81,8 @@ human readable report
 
 
 Logs are generated in the folder dbt-logs.
-We can use better logging by installing the dep in packages.ym and then create a macro to use in the models (Next Step)
+We can use better logging by installing the dep in packages.ym and then create a macro to use in the models (Next Step).
+
 example: 
 ### models/my_model.sql
 
