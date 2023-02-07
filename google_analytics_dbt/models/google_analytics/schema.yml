@@ -13,6 +13,9 @@ models:
         description: "the user OS"
       - name: distincCountCountry
         description: "sum of unique countries of our users on a specific day from a particular operating system"
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0 # optional parameter
 
 
   - name: total_page_views
@@ -20,10 +23,16 @@ models:
     columns:
       - name: reportDate
         description: "Generation day of statistics"
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+                  column_type: date
       - name: operationSystem
         description: "the user OS"
       - name: totalPageViews
         description: "The sum of website views by a specific operating system in a particular day"
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0 # optional parameter
 
   - name: users_report
     description: "Final report"
