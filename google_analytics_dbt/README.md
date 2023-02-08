@@ -49,6 +49,11 @@ Make sure you have the [Google Cloud SDK][cloud-sdk-install] installed.
 
 # Using dbt
 
+## Install dbt dependencies
+
+    dbt deps
+    
+
 ## Create development tables in your dataset
 
     dbt run
@@ -72,6 +77,7 @@ you can only select specific modules to be run in parallel by adding the --selec
 
 ## Documentation
 
+    dbt docs generate
     dbt docs serve
 
 To generate the documentation, please run this command (you can also have the lineage graph)
